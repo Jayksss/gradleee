@@ -5,21 +5,29 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/")
 public class MainController {
-
+	
+	//log 선언
+	public final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	/**
+	 * 메인
+	 * @param request
+	 * @param model
+	 */
 	@GetMapping("/main")
-	public ModelAndView Main(HttpServletRequest request, Model model) {
-		System.out.println("first visit console >>> ");
+	public String Main(HttpServletRequest request, Model model) {
+		System.out.println("first visit >>> ");
 		
-		ModelAndView mav = new ModelAndView();
 		List<String> resultList = new ArrayList<String>();
 		
 		resultList.add("AAA");
@@ -29,9 +37,10 @@ public class MainController {
 		resultList.add("EEE");
 		resultList.add("FFF");
 		
-		mav.addObject("resultList",resultList);
-		mav.setViewName("content/main");
+		model.addAttribute("resultList", resultList);
 		
-		return mav;
+		logger.info("resultList >>> {}", resultList);
+		
+		return "content/main";
 	}
 }
