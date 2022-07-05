@@ -34,33 +34,32 @@ public class MainController {
 		List<SalaryModel> salaryList = new ArrayList<SalaryModel>();
 		
 		//Salary model
-		SalaryModel salaryModel = new SalaryModel();
+		SalaryModel salaryModel;
 		
 		// 첫 번째 데이터
-		salaryModel = new SalaryModel();
-		salaryModel.setId(1);
-		salaryModel.setName("AAA");
-		salaryModel.setEmail("AAA@example.com");		
+		salaryModel = SalaryModel.builder()
+				.id(1)
+				.name("AAA")
+				.email("AAA@example.com").build();
 		salaryList.add(salaryModel);
 		
 		
 		// 두 번째 데이터
-		salaryModel = new SalaryModel();
-		salaryModel.setId(2);
-		salaryModel.setName("BBB");
-		salaryModel.setEmail("BBB@example.com");
+		salaryModel = SalaryModel.builder()
+				.id(2)
+				.name("BBB")
+				.email("BBB@example.com").build();
 		salaryList.add(salaryModel);
 
 		
 		// 세 번째 데이터
-		salaryModel = new SalaryModel();
-		salaryModel.setId(3);
-		salaryModel.setName("CCC");
-		salaryModel.setEmail("CCC@example.com");
+		salaryModel = SalaryModel.builder()
+				.id(3)
+				.name("CCC")
+				.email("CCC@example.com").build();
 		salaryList.add(salaryModel);
 		
 		model.addAttribute("salaryList", salaryList);
-		
 		logger.info("salaryList >>> {}", salaryList);
 		
 		return "content/main";

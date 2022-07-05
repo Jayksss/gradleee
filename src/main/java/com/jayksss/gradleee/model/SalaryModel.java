@@ -1,11 +1,12 @@
 package com.jayksss.gradleee.model;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NonNull;
 
-@Data
-public class SalaryModel {
-	
-	private int id;
-	private String name;
-	private String email;	
+@Builder @Data
+public class SalaryModel {	
+	private int id;	
+	@NonNull @Builder.Default private String name = "NULL NAME";
+	private String email;
 }
