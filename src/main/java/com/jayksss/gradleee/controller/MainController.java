@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.jayksss.gradleee.model.SalaryModel;
+
 @Controller
 @RequestMapping("/")
 public class MainController {
@@ -28,18 +30,38 @@ public class MainController {
 	public String Main(HttpServletRequest request, Model model) {
 		System.out.println("first visit >>> ");
 		
-		List<String> resultList = new ArrayList<String>();
+		//salary 객체 리스트 변수
+		List<SalaryModel> salaryList = new ArrayList<SalaryModel>();
 		
-		resultList.add("AAA");
-		resultList.add("BBB");
-		resultList.add("CCC");
-		resultList.add("DDD");
-		resultList.add("EEE");
-		resultList.add("FFF");
+		//Salary model
+		SalaryModel salaryModel = new SalaryModel();
 		
-		model.addAttribute("resultList", resultList);
+		// 첫 번째 데이터
+		salaryModel = new SalaryModel();
+		salaryModel.setId(1);
+		salaryModel.setName("AAA");
+		salaryModel.setEmail("AAA@example.com");		
+		salaryList.add(salaryModel);
 		
-		logger.info("resultList >>> {}", resultList);
+		
+		// 두 번째 데이터
+		salaryModel = new SalaryModel();
+		salaryModel.setId(2);
+		salaryModel.setName("BBB");
+		salaryModel.setEmail("BBB@example.com");
+		salaryList.add(salaryModel);
+
+		
+		// 세 번째 데이터
+		salaryModel = new SalaryModel();
+		salaryModel.setId(3);
+		salaryModel.setName("CCC");
+		salaryModel.setEmail("CCC@example.com");
+		salaryList.add(salaryModel);
+		
+		model.addAttribute("salaryList", salaryList);
+		
+		logger.info("salaryList >>> {}", salaryList);
 		
 		return "content/main";
 	}
