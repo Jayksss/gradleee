@@ -42,4 +42,9 @@ public class MainController {
 		
 		return "content/main";
 	}
+	
+	@GetMapping("/bbs")
+	public String bbs() {
+		return "content/bbs";
+	}
 }
