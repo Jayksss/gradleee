@@ -32,7 +32,7 @@ public class MainController {
 	 */
 	@GetMapping("/main")
 	public String Main(HttpServletRequest request, Model model) {
-		System.out.println("first visit >>> ");
+		System.out.println("<<<<<<<<<<<< Main Visit >>>>>>>>>>>>");
 		
 		//salary 객체 리스트 변수
 		List<SalaryModel> salaryList = salaryService.getSalary();
