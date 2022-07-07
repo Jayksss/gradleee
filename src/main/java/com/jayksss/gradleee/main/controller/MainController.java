@@ -38,7 +38,7 @@ public class MainController {
 		List<Main> salaryList = mainService.getSalary();
 		model.addAttribute("salaryList", salaryList);
 		
-		logger.info("salaryList >>> {}", salaryList);
+		System.out.println("salaryList >>> " + salaryList);
 		
 		return "content/main";
 	}
