@@ -1,4 +1,4 @@
-package com.jayksss.gradleee.controller;
+package com.jayksss.gradleee.main.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.jayksss.gradleee.model.SalaryModel;
-import com.jayksss.gradleee.service.SalaryService;
+import com.jayksss.gradleee.main.model.Main;
+import com.jayksss.gradleee.main.service.MainService;
 
 @Controller
 @RequestMapping("/")
@@ -23,7 +23,7 @@ public class MainController {
 	public final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-	SalaryService salaryService;
+	MainService mainService;
 	
 	/**
 	 * 메인
@@ -35,7 +35,7 @@ public class MainController {
 		System.out.println("<<<<<<<<<<<< Main Visit >>>>>>>>>>>>");
 		
 		//salary 객체 리스트 변수
-		List<SalaryModel> salaryList = salaryService.getSalary();
+		List<Main> salaryList = mainService.getSalary();
 		model.addAttribute("salaryList", salaryList);
 		
 		logger.info("salaryList >>> {}", salaryList);
