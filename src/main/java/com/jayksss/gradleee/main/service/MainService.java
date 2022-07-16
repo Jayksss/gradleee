@@ -14,7 +14,7 @@ public class MainService {
 	@Autowired
 	public MainMapper mainMapper;
 	
-	public List<Main> getSalary() {
-		return mainMapper.getSalary();
+	public List<Main> getActor() {
+		return mainMapper.getActor();
 	}
 }

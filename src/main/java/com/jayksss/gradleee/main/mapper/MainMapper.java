@@ -8,5 +8,5 @@ import com.jayksss.gradleee.main.model.Main;
 
 @Mapper
 public interface MainMapper {
-	List<Main> getSalary();
+	List<Main> getActor();
 }

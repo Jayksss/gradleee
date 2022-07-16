@@ -35,10 +35,10 @@ public class MainController {
 		System.out.println("<<<<<<<<<<<< Main Visit >>>>>>>>>>>>");
 		
 		//salary 객체 리스트 변수
-		List<Main> salaryList = mainService.getSalary();
-		model.addAttribute("salaryList", salaryList);
+		List<Main> actorList = mainService.getActor();
+		model.addAttribute("actorList", actorList);
 		
-		System.out.println("salaryList >>> " + salaryList);
+		System.out.println("actorList >>> " + actorList);
 		
 		return "content/main";
 	}
