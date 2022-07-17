@@ -1,12 +1,11 @@
 package com.jayksss.gradleee.main.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.jayksss.gradleee.main.model.Main;
-
 @Mapper
 public interface MainMapper {
-	List<Main> getActor();
+	List<Map<String, Object>> getActor();
 }

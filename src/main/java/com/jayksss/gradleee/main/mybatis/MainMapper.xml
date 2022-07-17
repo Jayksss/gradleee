@@ -3,6 +3,8 @@
 
 <mapper namespace="com.jayksss.gradleee.main.mapper.MainMapper">
 	<select id="getActor" resultType="Main">
-		SELECT * FROM ACTOR;
+		SELECT *
+		FROM ACTOR
+		LIMIT 10
 	</select>
 </mapper>

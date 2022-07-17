@@ -1,6 +1,7 @@
 package com.jayksss.gradleee.main.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,7 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.jayksss.gradleee.main.model.Main;
+import com.google.gson.Gson;
 import com.jayksss.gradleee.main.service.MainService;
 
 @Controller
@@ -34,11 +35,13 @@ public class MainController {
 	public String Main(HttpServletRequest request, Model model) {
 		System.out.println("<<<<<<<<<<<< Main Visit >>>>>>>>>>>>");
 		
-		//salary 객체 리스트 변수
-		List<Main> actorList = mainService.getActor();
+		List<Map<String, Object>> actorList = mainService.getActor();
 		model.addAttribute("actorList", actorList);
 		
-		System.out.println("actorList >>> " + actorList);
+		//gson 적용 : view에 json 형태로 전달
+		Gson gson = new Gson();
+		String list = gson.toJson(actorList);
+		model.addAttribute("list", list);
 		
 		return "content/main";
 	}

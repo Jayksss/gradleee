@@ -1,9 +1,8 @@
 package com.jayksss.gradleee.main.model;
 
-import lombok.Builder;
 import lombok.Data;
 
-@Builder @Data
+@Data
 public class Main {
 	
 	private int actorId;
