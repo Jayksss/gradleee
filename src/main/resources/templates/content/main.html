@@ -1,16 +1,11 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 
+<!-- thymeleaf head -->
 <th:block layout:fragment="head" th:include="@{/fragments/head}"></th:block>
 
-<script>
-$(function() {
-	console.log("json list >>> [[${list}]]");
-})
-</script>
-
 <body>
-
+<!-- thymeleaf header -->
 <th:block layout:fragment="header" th:include="@{/fragments/header}"></th:block>
 
 	<main class="container">
@@ -228,7 +223,15 @@ $(function() {
 
 	</main>
 
+<!-- thymeleaf footer -->
 <th:block layout:fragment="footer" th:include="@{/fragments/footer}"></th:block>
 
+<script>
+$(function() {
+	console.log("json list >>> [[${list}]]");
+})
+</script>
+
 </body>
+
 </html>
