@@ -26,6 +26,7 @@ public class UserController {
 	/**
 	 * 유저 목록 조회
 	 * @param model
+	 * @return List
 	 */
 	@PostMapping("/userList")
 	public List<User> userList(Model model) {
@@ -42,6 +43,7 @@ public class UserController {
 	/**
 	 * 회원가입 신청
 	 * @param model
+	 * @return void
 	 */
 	@PostMapping("/signup")
 	public void signup(Model model) {

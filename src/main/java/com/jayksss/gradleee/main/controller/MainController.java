@@ -3,8 +3,6 @@ package com.jayksss.gradleee.main.controller;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +27,10 @@ public class MainController {
 	/**
 	 * 메인 페이지
 	 * @param model
+	 * @return String
 	 */
 	@GetMapping("/main")
-	public String Main(HttpServletRequest request, Model model) {
+	public String Main(Model model) {
 		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: Start ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
 		List<Map<String, Object>> actorList = mainService.getActor();
@@ -49,6 +48,7 @@ public class MainController {
 	
 	/**
 	 * 기본 템플릿 페이지
+	 * @return String
 	 */
 	@GetMapping("/defaultTemplete")
 	public String defaultTemplete() {
@@ -61,6 +61,7 @@ public class MainController {
 	
 	/**
 	 * 게시판 페이지
+	 * @return String
 	 */
 	@GetMapping("/bbs")
 	public String bbs() {
@@ -73,6 +74,7 @@ public class MainController {
 	
 	/**
 	 * 회원가입 페이지
+	 * @return String
 	 */
 	@GetMapping("/signup")
 	public String signup() {
