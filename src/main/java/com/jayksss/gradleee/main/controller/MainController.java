@@ -32,7 +32,7 @@ public class MainController {
 	 */
 	@GetMapping("/main")
 	public String Main(HttpServletRequest request, Model model) {
-		logger.info("<<<<< <<<<< MethodName ::: {} ::: Start >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: Start ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
 		List<Map<String, Object>> actorList = mainService.getActor();
 		model.addAttribute("actorList", actorList);
@@ -42,7 +42,7 @@ public class MainController {
 		String list = gson.toJson(actorList);
 		model.addAttribute("list", list);
 		
-		logger.info("<<<<< <<<<< MethodName ::: {} ::: End >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: End ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
 		return "content/main";
 	}
@@ -52,9 +52,9 @@ public class MainController {
 	 */
 	@GetMapping("/defaultTemplete")
 	public String defaultTemplete() {
-		logger.info("<<<<< <<<<< MethodName ::: {} ::: Start >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: Start ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
-		logger.info("<<<<< <<<<< MethodName ::: {} ::: End >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: End ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
 		return "content/default_templete";
 	}
@@ -64,9 +64,9 @@ public class MainController {
 	 */
 	@GetMapping("/bbs")
 	public String bbs() {
-		logger.info("<<<<< <<<<< MethodName ::: {} ::: Start >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: Start ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
-		logger.info("<<<<< <<<<< MethodName ::: {} ::: End >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: End ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
 		return "content/bbs";
 	}
@@ -76,9 +76,9 @@ public class MainController {
 	 */
 	@GetMapping("/signup")
 	public String signup() {
-		logger.info("<<<<< <<<<< MethodName ::: {} ::: Start >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: Start ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
-		logger.info("<<<<< <<<<< MethodName ::: {} ::: End >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: End ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
 		return "content/signup";
 	}

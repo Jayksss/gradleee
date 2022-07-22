@@ -10,13 +10,24 @@
 </head>
 
 <th:block layout:fragment="content">
-	<h1>회원가입</h1>
+	<h1>유저 목록</h1>
+	<h2 id="userList"></h2>
 </th:block>
 
 <th:block layout:fragment="script">
 	<script>
 		$(function() {
-			/* 개별 페이지 script 입력 */
+			$.ajax({
+				url: "/user/userList",
+				method: "POST",
+				success: function(data) {
+					console.log("data >>> ", data[0]);
+					$("#userList").text(data[0].name);
+				},
+				error: function(e) {
+					
+				}
+			})
 		})
 	</script>
 </th:block>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jayksss.gradleee.user.mapper.UserMapper">
+
+	<select id="selectUser" resultType="User">
+		SELECT *
+		FROM sakila.USER;
+	</select>
+
+	<insert id="inserUser" parameterType="User">
+		SELECT *
+		FROM sakila.ACTOR
+		LIMIT 10
+	</insert>
+</mapper>
