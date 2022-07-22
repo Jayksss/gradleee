@@ -27,13 +27,12 @@ public class MainController {
 	MainService mainService;
 	
 	/**
-	 * 메인
-	 * @param request
+	 * 메인 페이지
 	 * @param model
 	 */
 	@GetMapping("/main")
 	public String Main(HttpServletRequest request, Model model) {
-		System.out.println("<<<<<<<<<<<< Main Visit >>>>>>>>>>>>");
+		logger.info("<<<<< <<<<< MethodName ::: {} ::: Start >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
 		List<Map<String, Object>> actorList = mainService.getActor();
 		model.addAttribute("actorList", actorList);
@@ -43,11 +42,44 @@ public class MainController {
 		String list = gson.toJson(actorList);
 		model.addAttribute("list", list);
 		
+		logger.info("<<<<< <<<<< MethodName ::: {} ::: End >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
 		return "content/main";
 	}
 	
+	/**
+	 * 기본 템플릿 페이지
+	 */
+	@GetMapping("/defaultTemplete")
+	public String defaultTemplete() {
+		logger.info("<<<<< <<<<< MethodName ::: {} ::: Start >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		logger.info("<<<<< <<<<< MethodName ::: {} ::: End >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		return "content/default_templete";
+	}
+	
+	/**
+	 * 게시판 페이지
+	 */
 	@GetMapping("/bbs")
 	public String bbs() {
+		logger.info("<<<<< <<<<< MethodName ::: {} ::: Start >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		logger.info("<<<<< <<<<< MethodName ::: {} ::: End >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
 		return "content/bbs";
+	}
+	
+	/**
+	 * 회원가입 페이지
+	 */
+	@GetMapping("/signup")
+	public String signup() {
+		logger.info("<<<<< <<<<< MethodName ::: {} ::: Start >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		logger.info("<<<<< <<<<< MethodName ::: {} ::: End >>>>> >>>>>", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		return "content/signup";
 	}
 }
