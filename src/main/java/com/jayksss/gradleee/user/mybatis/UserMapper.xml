@@ -3,7 +3,7 @@
 
 <mapper namespace="com.jayksss.gradleee.user.mapper.UserMapper">
 
-	<select id="selectUser" resultType="User">
+	<select id="selectUser" resultType="CamelMap">
 		SELECT *
 		FROM sakila.USER;
 	</select>
