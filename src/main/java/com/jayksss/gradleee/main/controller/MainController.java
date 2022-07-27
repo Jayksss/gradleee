@@ -25,6 +25,19 @@ public class MainController {
 	MainService mainService;
 	
 	/**
+	 * Welcome 페이지
+	 * @return String
+	 */
+	@GetMapping("/welcome")
+	public String welcome() {
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: Start ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: End ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		return "content/welcome";
+	}
+	
+	/**
 	 * 메인 페이지
 	 * @param model
 	 * @return String

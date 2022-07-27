@@ -6,9 +6,11 @@
 
 <head>
 	<title>Main</title>
+	<link th:href="@{/css/blog.css}" rel="stylesheet">
+	<link th:href="@{/fonts/PlayfairDisplay-Black.ttf}" rel="stylesheet">
 </head>
 
-<body>
+<body style="display:none;">
 	<th:block layout:fragment="content">
 		<main class="container">
 			<div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
@@ -231,7 +233,7 @@
 <th:block layout:fragment="script">
 	<script>
 		$(function() {
-			console.log("json list >>> [[${list}]]");
+			$("body").fadeIn("slow");
 		})
 	</script>
 </th:block>
