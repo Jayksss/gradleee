@@ -28,7 +28,7 @@ public class MainController {
 	 * Welcome 페이지
 	 * @return String
 	 */
-	@GetMapping("/welcome")
+	@GetMapping("/")
 	public String welcome() {
 		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: Start ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
