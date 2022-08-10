@@ -11,22 +11,22 @@
 
 <th:block layout:fragment="content">
 	<div class="container w-25">
-		<form class="row g-3 p-4 p-md-5">
+		<form class="row g-3 p-4 p-md-5" method="POST" action="/user/signup">
 			<div class="col-12">
-				<label for="inputAddress" class="form-label">Name</label>
-				<input type="text" class="form-control" id="userName" placeholder="홍길동">
+				<label for="userName" class="form-label">Name</label>
+				<input type="text" class="form-control" id="userName" name="userName" placeholder="ex) 홍길동">
 			</div>
 			<div class="col-12">
-				<label for="inputEmail4" class="form-label">ID</label>
-				<input type="text" class="form-control" id="userId" placeholder="hong1234">
+				<label for="userId" class="form-label">ID</label>
+				<input type="text" class="form-control" id="userId" name="userId" placeholder="ex) hong1234">
 			</div>
 			<div class="col-12">
-				<label for="inputPassword4" class="form-label">Password</label>
-				<input type="password" class="form-control" id="userPw">
+				<label for="userPw" class="form-label">Password</label>
+				<input type="password" class="form-control" id="password" name="password">
 			</div>
 			<div class="col-12">
-				<label for="inputPassword4" class="form-label">Password Check</label>
-				<input type="password" class="form-control" id="userPwCheck">
+				<label for="passwordCheck" class="form-label">Password Check</label>
+				<input type="password" class="form-control" id="passwordCheck">
 			</div>
 			
 			<div class="col-12">
@@ -39,9 +39,11 @@
 <th:block layout:fragment="script">
 	<script>
 		$(function() {
-			document.getElementById("signInBtn").addEventListener("click", function() {
-				alert("클릭");
-			});
+// 			document.getElementById("signInBtn").addEventListener("click", function() {
+// 				alert("클릭");
+// 			});
+
+			
 		})
 	</script>
 </th:block>

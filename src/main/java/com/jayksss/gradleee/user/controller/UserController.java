@@ -1,6 +1,7 @@
 package com.jayksss.gradleee.user.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jayksss.gradleee.user.model.User;
@@ -46,8 +48,11 @@ public class UserController {
 	 * @return void
 	 */
 	@PostMapping("/signup")
-	public void signup(Model model) {
+	public void signup(Model model, @RequestParam Map<String, Object> param) {
 		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: Start ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		System.out.println("param >>> " + param);
+		userService.signup(param);
 		
 		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: End ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 	}

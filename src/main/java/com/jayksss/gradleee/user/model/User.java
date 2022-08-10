@@ -8,9 +8,9 @@ import lombok.Data;
 public class User {
 	
 	private int no;
-	private String id;
+	private String userId;
 	private String password;
-	private String name;
+	private String userName;
 	private String job;
 	private Date registDate;
 }

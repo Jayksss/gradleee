@@ -9,8 +9,19 @@
 	</select>
 
 	<insert id="inserUser" parameterType="User">
-		SELECT *
-		FROM sakila.ACTOR
-		LIMIT 10
+		INSERT INTO sakila.USER
+		(
+			USER_ID
+			, PASSWORD
+			, USER_NAME
+			, JOB
+			, REGIST_DATE
+		) values (
+			#{userId}
+			, #{password}
+			, #{userName}
+			, #{job}
+			, NOW()
+		)
 	</insert>
 </mapper>
