@@ -97,4 +97,17 @@ public class MainController {
 		
 		return "content/signup";
 	}
+	
+	/**
+	 * 로그인 페이지
+	 * @return String
+	 */
+	@GetMapping("/login")
+	public String login() {
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: Start ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: End ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		return "content/login";
+	}
 }

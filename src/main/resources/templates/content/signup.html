@@ -14,19 +14,23 @@
 		<form class="row g-3 p-4 p-md-5" method="POST" action="/user/signup">
 			<div class="col-12">
 				<label for="userName" class="form-label">Name</label>
-				<input type="text" class="form-control" id="userName" name="userName" placeholder="ex) 홍길동">
+				<input type="text" class="form-control" id="userName" name="userName" placeholder="ex) 홍길동" required="required">
 			</div>
 			<div class="col-12">
 				<label for="userId" class="form-label">ID</label>
-				<input type="text" class="form-control" id="userId" name="userId" placeholder="ex) hong1234">
+				<input type="text" class="form-control" id="userId" name="userId" placeholder="ex) hong1234" required="required">
+			</div>
+			<div class="col-12">
+				<label for="job" class="form-label">Job</label>
+				<input type="text" class="form-control" id="job" name="job" placeholder="ex) 학생" required="required">
 			</div>
 			<div class="col-12">
 				<label for="userPw" class="form-label">Password</label>
-				<input type="password" class="form-control" id="password" name="password">
+				<input type="password" class="form-control" id="password" name="password" required="required">
 			</div>
 			<div class="col-12">
 				<label for="passwordCheck" class="form-label">Password Check</label>
-				<input type="password" class="form-control" id="passwordCheck">
+				<input type="password" class="form-control" id="passwordCheck" required="required">
 			</div>
 			
 			<div class="col-12">

@@ -51,7 +51,6 @@ public class UserController {
 	public void signup(Model model, @RequestParam Map<String, Object> param) {
 		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: Start ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
-		System.out.println("param >>> " + param);
 		userService.signup(param);
 		
 		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: End ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
