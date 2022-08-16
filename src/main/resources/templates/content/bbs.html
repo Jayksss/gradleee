@@ -10,13 +10,31 @@
 </head>
 
 <th:block layout:fragment="content">
-	<h1>게시판</h1>
+	<div class="w-100">
+		<figure class="text-start">
+			<blockquote class="blockquote">
+				<p>A well-known quote, contained in a blockquote element.</p>
+			</blockquote>
+			<figcaption class="blockquote-footer">
+				Someone famous in <cite title="Source Title">Source Title</cite>
+			</figcaption>
+		</figure>
+		<div class="list-group" id="bbsList">
+			<a th:each="list : ${list}" href="#" class="list-group-item list-group-item-action" aria-current="true">
+				<div class="d-flex w-100 justify-content-between">
+					<h5 th:text=" ${list.title}" class="mb-1">Title</h5>
+					<small th:text="${list.releaseYear}">Release Year</small>
+				</div>
+				<p th:text="${list.description}" class="mb-1">Content</p>
+			</a>
+		</div>
+	</div>
 </th:block>
 
 <th:block layout:fragment="script">
 	<script>
 		$(function() {
-			/* 개별 페이지 script 입력 */
+			
 		})
 	</script>
 </th:block>

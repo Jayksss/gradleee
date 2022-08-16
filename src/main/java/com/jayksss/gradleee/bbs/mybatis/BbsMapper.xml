@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jayksss.gradleee.bbs.mapper.BbsMapper">
+
+	<select id="selectBbsList" resultType="CamelMap">
+		SELECT
+			FILM_ID
+			, TITLE
+			, DESCRIPTION
+			, RELEASE_YEAR
+			, LANGUAGE_ID
+			, ORIGINAL_LANGUAGE_ID
+			, RENTAL_DURATION
+			, RENTAL_RATE
+			, LENGTH
+			, REPLACEMENT_COST
+			, RATING
+			, SPECIAL_FEATURES
+			, LAST_UPDATE
+		FROM sakila.FILM
+		LIMIT 50
+	</select>
+
+</mapper>

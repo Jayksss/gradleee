@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
+import com.jayksss.gradleee.bbs.model.Bbs;
+import com.jayksss.gradleee.bbs.service.BbsService;
 import com.jayksss.gradleee.main.service.MainService;
 
 @Controller
@@ -23,6 +25,9 @@ public class MainController {
 	
 	@Autowired
 	MainService mainService;
+	
+	@Autowired
+	BbsService bbsService;
 	
 	/**
 	 * Welcome 페이지
@@ -75,10 +80,14 @@ public class MainController {
 	/**
 	 * 게시판 페이지
 	 * @return String
+	 * @param model
 	 */
 	@GetMapping("/bbs")
-	public String bbs() {
+	public String bbs(Model model) {
 		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: Start ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		List<Bbs> list = bbsService.selectBbsList();
+		model.addAttribute("list", list);
 		
 		logger.info("■□■□■□■□■□■□■□ MethodName ::: {} ::: End ■□■□■□■□■□■□■□", Thread.currentThread().getStackTrace()[1].getMethodName());
 		
